@@ -6,36 +6,54 @@
 /*   By: flvejux <flvejux@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/19 08:36:43 by flvejux           #+#    #+#             */
-/*   Updated: 2025/11/19 12:58:14 by flvejux          ###   ########.fr       */
+/*   Updated: 2025/11/20 09:06:45 by flvejux          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-char	*extract_and_convert(int ac, char **av)
+char	**extract(int ac, char **av, int *do_free)
 {
-	int		i;
 	char	**tab;
-	t_stack	*a;
 
-	a = NULL;
-	i = 1;
 	if (ac == 2)
 	{
-		*tab = ft_split(av[1], ' ');
+		tab = ft_split(av[1], ' ');
 		if (!tab)
-			return (free(tab), NULL);
+			return (NULL);
+		*do_free = 1;
 	}
+
 	else if (ac > 2)
 	{
-		while (i < ac)
-		{
-			tab = av[i];
-			i++;
-		}
+		tab = av + 1;
+		*do_free = 0;
 	}
-	While(tab[i])
+	return (tab);
+}
+int	count_args(char **tab)
+{
+	int i;
+
+	i = 0;
+	while (*tab)
 	{
-		
+		i++;
 	}
+	return i;
+}
+int convert(char **tab, int count)
+{
+	int *nbr;
+	int i;
+
+	i = 0
+	while (count > i)
+	{
+		(long)nbr = ft_atol(tab[i]);
+		if (nbr < INT_MAX || int > INT_MAX)
+			return (FALSE)
+		i++;
+	}
+	return (nbr);
 }
