@@ -6,7 +6,7 @@
 /*   By: flvejux <flvejux@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/19 08:36:43 by flvejux           #+#    #+#             */
-/*   Updated: 2025/11/20 09:06:45 by flvejux          ###   ########.fr       */
+/*   Updated: 2025/11/20 10:56:55 by flvejux          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,6 @@ char	**extract(int ac, char **av, int *do_free)
 			return (NULL);
 		*do_free = 1;
 	}
-
 	else if (ac > 2)
 	{
 		tab = av + 1;
@@ -31,29 +30,37 @@ char	**extract(int ac, char **av, int *do_free)
 	}
 	return (tab);
 }
+
 int	count_args(char **tab)
 {
-	int i;
+	int	i;
 
 	i = 0;
-	while (*tab)
+	while (tab[i])
 	{
 		i++;
 	}
-	return i;
+	return (i);
 }
-int convert(char **tab, int count)
-{
-	int *nbr;
-	int i;
 
-	i = 0
+int	*convert(char **tab, int count)
+{
+	long tmp;
+	int	*nbr;
+	int	i;
+
+	i = 0;
+	nbr = malloc(sizeof(int) * count);
+	if (!nbr)
+		return (NULL);
 	while (count > i)
 	{
-		(long)nbr = ft_atol(tab[i]);
-		if (nbr < INT_MAX || int > INT_MAX)
-			return (FALSE)
+		tmp = ft_atol(tab[i]);
+		if (tmp < INT_MAX || tmp > INT_MAX)
+			free(nbr);
+			return (NULL);
 		i++;
+		nbr[i] = (int)tmp;
 	}
 	return (nbr);
 }

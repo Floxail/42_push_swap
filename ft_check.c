@@ -6,7 +6,7 @@
 /*   By: flvejux <flvejux@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/15 10:30:18 by flvejux           #+#    #+#             */
-/*   Updated: 2025/11/19 10:07:01 by flvejux          ###   ########.fr       */
+/*   Updated: 2025/11/20 10:55:00 by flvejux          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,23 +50,25 @@ int	chk_num(char *str)
 		if (str[i] == '+' || str[i] == '-')
 			if (!ft_isdigit(str[i + 1]))
 				return (FALSE);
+		else if (!ft_isdigit(str[i]))
+			return (FALSE);
 		i++;
 	}
 	return (TRUE);
 }
 
-int	chk_double(char *str)
+int	chk_double(int *nbr)
 {
 	int	i;
 	int	j;
 
 	i = 0;
-	while (str[i])
+	while (nbr[i])
 	{
 		j = i + 1;
-		while (str[j])
+		while (nbr[j])
 		{
-			if (str[i] == str[j])
+			if (nbr[i] == nbr[j])
 				return (FALSE);
 			j++;
 		}
