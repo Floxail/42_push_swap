@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_check.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: flvejux <flvejux@student.42.fr>            +#+  +:+       +#+        */
+/*   By: flox <flox@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/15 10:30:18 by flvejux           #+#    #+#             */
-/*   Updated: 2025/11/20 10:55:00 by flvejux          ###   ########.fr       */
+/*   Updated: 2025/11/24 10:46:08 by flox             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,7 +69,7 @@ int	chk_double(int *nbr)
 		while (nbr[j])
 		{
 			if (nbr[i] == nbr[j])
-				return (FALSE);
+				return (free(nbr), FALSE);
 			j++;
 		}
 		i++;

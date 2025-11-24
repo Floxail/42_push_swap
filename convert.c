@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   convert.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: flvejux <flvejux@student.42.fr>            +#+  +:+       +#+        */
+/*   By: flox <flox@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/19 08:36:43 by flvejux           #+#    #+#             */
-/*   Updated: 2025/11/20 10:56:55 by flvejux          ###   ########.fr       */
+/*   Updated: 2025/11/24 10:33:06 by flox             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,9 +45,9 @@ int	count_args(char **tab)
 
 int	*convert(char **tab, int count)
 {
-	long tmp;
-	int	*nbr;
-	int	i;
+	long	tmp;
+	int		*nbr;
+	int		i;
 
 	i = 0;
 	nbr = malloc(sizeof(int) * count);
@@ -57,8 +57,10 @@ int	*convert(char **tab, int count)
 	{
 		tmp = ft_atol(tab[i]);
 		if (tmp < INT_MAX || tmp > INT_MAX)
+		{
 			free(nbr);
 			return (NULL);
+		}
 		i++;
 		nbr[i] = (int)tmp;
 	}
