@@ -6,7 +6,7 @@
 /*   By: flvejux <flvejux@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/25 08:25:25 by flvejux           #+#    #+#             */
-/*   Updated: 2025/11/25 09:43:42 by flvejux          ###   ########.fr       */
+/*   Updated: 2025/11/25 11:42:40 by flvejux          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,9 +31,14 @@ void	swap(t_stack **stack)
 	*stack = tmp_second;
 }
 
-/* void	push(t_stack **stack_give, t_stack **stack_receive)
+void	push(t_stack **stack_give, t_stack **stack_receive)
 {
-	if (!stack_give)
+	t_stack	tmp;
+	
+	if (!stack_receive)
 		return ;
-	*stack_receive = (*stack_give)->value;
-} */
+	tmp = (*stack_give)->next;
+	(*stack_receive)->next = *stack_give;
+	*stack_give = *stack_receive;
+	*stack_receive = tmp;	
+}
