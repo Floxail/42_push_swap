@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_check.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: flox <flox@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: flvejux <flvejux@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/15 10:30:18 by flvejux           #+#    #+#             */
-/*   Updated: 2025/11/24 10:46:08 by flox             ###   ########.fr       */
+/*   Updated: 2025/11/25 09:34:09 by flvejux          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,34 +45,55 @@ int	chk_num(char *str)
 	int	i;
 
 	i = 0;
+	
+	if (str[i] == '+' || str[i] == '-')
+	{
+		i++;
+		if (!(str[i]))
+			return (FALSE);
+	}
+	
 	while (str[i])
 	{
-		if (str[i] == '+' || str[i] == '-')
-			if (!ft_isdigit(str[i + 1]))
-				return (FALSE);
-		else if (!ft_isdigit(str[i]))
+		if (!ft_isdigit(str[i]))
 			return (FALSE);
 		i++;
 	}
 	return (TRUE);
 }
 
-int	chk_double(int *nbr)
+int chk_double(int *nbr, int size)
 {
-	int	i;
-	int	j;
+    int i;
+    int j;
+    
+    i = 0;
+    while (i < size)
+    {
+        j = i + 1;
+        while (j < size)
+        {
+            if (nbr[i] == nbr[j])
+                return (FALSE);
+        j++;
+        }
+        i++;
+    }
+    return (TRUE);
+}
 
-	i = 0;
-	while (nbr[i])
-	{
-		j = i + 1;
-		while (nbr[j])
-		{
-			if (nbr[i] == nbr[j])
-				return (free(nbr), FALSE);
-			j++;
-		}
-		i++;
-	}
-	return (TRUE);
+void ft_free(char **tab)
+{
+    int i;
+    
+    if (!tab)
+        return ;
+    
+    i = 0;
+    while (tab[i])
+    {
+        free(tab[i]);
+        i++;
+    }
+    free(tab);
 }
