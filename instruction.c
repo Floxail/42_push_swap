@@ -6,7 +6,7 @@
 /*   By: flvejux <flvejux@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/25 08:25:25 by flvejux           #+#    #+#             */
-/*   Updated: 2025/11/25 11:42:40 by flvejux          ###   ########.fr       */
+/*   Updated: 2025/11/25 12:36:10 by flvejux          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,3 +42,19 @@ void	push(t_stack **stack_give, t_stack **stack_receive)
 	*stack_give = *stack_receive;
 	*stack_receive = tmp;	
 }
+
+void	rotate(t_stack **stack)
+{
+	t_stack *tmp;
+
+	tmp = *stack;
+	if (!stack || !(*stack)->next)
+		return ;
+	*stack = tmp->next;
+	tmp->next = NULL;	
+
+/* 	if (!stack->stack)
+			return ;
+		stack->stack = stack->stack->next; */
+}
+
