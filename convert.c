@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   convert.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: flvejux <flvejux@student.42.fr>            +#+  +:+       +#+        */
+/*   By: flvejux <flvejux@student.42lausanne.ch>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/11/19 08:36:43 by flvejux           #+#    #+#             */
-/*   Updated: 2025/11/25 08:25:31 by flvejux          ###   ########.fr       */
+/*   Created: 2025/11/29 09:25:23 by flvejux           #+#    #+#             */
+/*   Updated: 2025/11/29 09:26:05 by flvejux          ###   ########.ch       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,13 +56,13 @@ int	*convert(char **tab, int count)
 	while (count > i)
 	{
 		tmp = ft_atol(tab[i]);
-		if (tmp < INT_MAX || tmp > INT_MAX)
+		if (tmp < INT_MIN || tmp > INT_MAX)
 		{
 			free(nbr);
 			return (NULL);
 		}
-		i++;
 		nbr[i] = (int)tmp;
+		i++;
 	}
 	return (nbr);
 }

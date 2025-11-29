@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: flvejux <flvejux@student.42lausanne.ch>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/11/27 11:16:38 by flvejux           #+#    #+#             */
-/*   Updated: 2025/11/29 09:07:21 by flvejux          ###   ########.ch       */
+/*   Created: 2025/11/29 09:40:23 by flvejux           #+#    #+#             */
+/*   Updated: 2025/11/29 09:40:27 by flvejux          ###   ########.ch       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ void	rrotate(t_stack **stack)
 {
 	t_stack	*first;
 	t_stack	*last;
-	t_stack *b_last;
+	t_stack	*b_last;
 
 	if (!(*stack) || !(*stack)->next)
 		return ;
@@ -30,4 +30,23 @@ void	rrotate(t_stack **stack)
 	last->prev = NULL;
 	first->prev = last;
 	*stack = last;
+}
+
+void	rra(t_stack **a)
+{
+	rrotate(a);
+	ft_putendl_fd("rra", 1);
+}
+
+void	rrb(t_stack **b)
+{
+	rrotate(b);
+	ft_putendl_fd("rrb", 1);
+}
+
+void	rrr(t_stack **a, t_stack **b)
+{
+	rrotate(a);
+	rrotate(b);
+	ft_putendl_fd("rrr", 1);
 }

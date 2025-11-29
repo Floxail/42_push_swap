@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: flvejux <flvejux@student.42lausanne.ch>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/11/27 10:29:16 by flvejux           #+#    #+#             */
-/*   Updated: 2025/11/27 10:29:30 by flvejux          ###   ########.ch       */
+/*   Created: 2025/11/29 09:32:54 by flvejux           #+#    #+#             */
+/*   Updated: 2025/11/29 09:33:00 by flvejux          ###   ########.ch       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,8 +23,8 @@ void	swap(t_stack **stack)
 	tmp_second = (*stack)->next;
 	tmp_first->next = tmp_second->next;
 	tmp_second->next = tmp_first;
-	if (tmp_second->next)
-		tmp_second->next->prev = tmp_first;
+	if (tmp_first->next)
+		tmp_first->next->prev = tmp_first;
 	tmp_first->prev = tmp_second;
 	tmp_second->prev = NULL;
 	*stack = tmp_second;

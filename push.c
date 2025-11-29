@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: flvejux <flvejux@student.42lausanne.ch>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/11/29 09:08:56 by flvejux           #+#    #+#             */
-/*   Updated: 2025/11/29 09:15:04 by flvejux          ###   ########.ch       */
+/*   Created: 2025/11/29 09:38:35 by flvejux           #+#    #+#             */
+/*   Updated: 2025/11/29 09:40:10 by flvejux          ###   ########.ch       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,13 +19,13 @@ void	push(t_stack **stack_give, t_stack **stack_receive)
 	if (!stack_receive || !stack_give)
 		return ;
 	tmp = *stack_give;
-	*stack_give = (*stack_receive)->next;
+	*stack_give = (*stack_give)->next;
 	if (*stack_give)
-		(*stack_give->prev = NULL);
+		(*stack_give)->prev = NULL;
 	tmp->next = *stack_receive;
 	tmp->prev = NULL;
-    if (*stack_receive)
-        (*stack_receive)->prev = tmp;
+	if (*stack_receive)
+		(*stack_receive)->prev = tmp;
 	*stack_receive = tmp;
 }
 

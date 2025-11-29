@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: flvejux <flvejux@student.42lausanne.ch>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/11/27 10:27:22 by flvejux           #+#    #+#             */
-/*   Updated: 2025/11/27 10:27:32 by flvejux          ###   ########.ch       */
+/*   Created: 2025/11/29 09:38:44 by flvejux           #+#    #+#             */
+/*   Updated: 2025/11/29 09:38:44 by flvejux          ###   ########.ch       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,6 @@
 # define TRUE 1
 # define FALSE 0
 # include "./utils/libft/libft.h"
-# include "./utils/ft_printf/ft_printf.h"
 # include <limits.h>
 
 typedef struct s_stack
@@ -35,6 +34,21 @@ t_stack	*create_stack(int *tab, int size);
 void	free_stack(t_stack *stack);
 void	swap(t_stack **stack);
 void	ft_free(char **tab);
+void	rotate(t_stack **stack);
+void	ra(t_stack **a);
+void	rb(t_stack **b);
+void	rr(t_stack **a, t_stack **b);
+void	rrotate(t_stack **stack);
+void	rra(t_stack **a);
+void	rrb(t_stack **b);
+void	rrr(t_stack **a, t_stack **b);
+void	push(t_stack **stack_give, t_stack **stack_receive);
+void	pa(t_stack **a, t_stack **b);
+void	pb(t_stack **b, t_stack **a);
+void	swap(t_stack **stack);
+void	sa(t_stack **a);
+void	sa(t_stack **b);
+void	ss(t_stack **a, t_stack **b);
 
 // int 
 int		check_entry(int ac, char **av);
