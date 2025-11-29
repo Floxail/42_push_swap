@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: flvejux <flvejux@student.42lausanne.ch>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/11/27 10:25:34 by flvejux           #+#    #+#             */
-/*   Updated: 2025/11/27 10:26:44 by flvejux          ###   ########.ch       */
+/*   Created: 2025/11/29 10:36:57 by flvejux           #+#    #+#             */
+/*   Updated: 2025/11/29 10:43:16 by flvejux          ###   ########.ch       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,17 +80,18 @@ int	chk_double(int *nbr, int size)
 	return (TRUE);
 }
 
-void	ft_free(char **tab)
+int	is_sorted(t_stack **stack)
 {
-	int	i;
+	t_stack	*tmp;
 
-	if (!tab)
-		return ;
-	i = 0;
-	while (tab[i])
+	if (!stack)
+		return (TRUE);
+	tmp = *stack;
+	while (tmp->next)
 	{
-		free(tab[i]);
-		i++;
+		if (tmp->value > tmp->next->value)
+			return (FALSE);
+		tmp = tmp->next;
 	}
-	free(tab);
+	return (TRUE);
 }
