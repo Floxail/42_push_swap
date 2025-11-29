@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: flvejux <flvejux@student.42.fr>            +#+  +:+       +#+        */
+/*   By: flvejux <flvejux@student.42lausanne.ch>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/11/10 09:52:53 by flvejux           #+#    #+#             */
-/*   Updated: 2025/11/25 09:34:12 by flvejux          ###   ########.fr       */
+/*   Created: 2025/11/27 10:27:22 by flvejux           #+#    #+#             */
+/*   Updated: 2025/11/27 10:27:32 by flvejux          ###   ########.ch       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,12 +34,12 @@ t_stack	*create_stack(int *tab, int size);
 // void
 void	free_stack(t_stack *stack);
 void	swap(t_stack **stack);
-void ft_free(char **tab);
+void	ft_free(char **tab);
 
 // int 
-int	check_entry(int ac, char **av);
-int	is_valid(char *av);
-int	chk_num(char *str);
-int	chk_double(int *nbr, int size);
+int		check_entry(int ac, char **av);
+int		is_valid(char *av);
+int		chk_num(char *str);
+int		chk_double(int *nbr, int size);
 
 #endif

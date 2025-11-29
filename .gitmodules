@@ -1,6 +1,3 @@
-[submodule "utils/ft_printf"]
-	path = utils/ft_printf
-	url = git@github.com:Floxail/42_ft_printf.git
 [submodule "utils/libft"]
 	path = utils/libft
 	url = https://github.com/Floxail/42_cursus_libft.git
