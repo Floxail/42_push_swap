@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: flvejux <flvejux@student.42lausanne.ch>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/11/29 10:36:57 by flvejux           #+#    #+#             */
-/*   Updated: 2025/11/29 10:43:16 by flvejux          ###   ########.ch       */
+/*   Created: 2025/11/30 09:06:11 by flvejux           #+#    #+#             */
+/*   Updated: 2025/11/30 09:06:11 by flvejux          ###   ########.ch       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,22 +76,6 @@ int	chk_double(int *nbr, int size)
 			j++;
 		}
 		i++;
-	}
-	return (TRUE);
-}
-
-int	is_sorted(t_stack **stack)
-{
-	t_stack	*tmp;
-
-	if (!stack)
-		return (TRUE);
-	tmp = *stack;
-	while (tmp->next)
-	{
-		if (tmp->value > tmp->next->value)
-			return (FALSE);
-		tmp = tmp->next;
 	}
 	return (TRUE);
 }

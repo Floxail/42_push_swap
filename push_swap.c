@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: flvejux <flvejux@student.42.fr>            +#+  +:+       +#+        */
+/*   By: flvejux <flvejux@student.42lausanne.ch>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/11/10 09:46:45 by flvejux           #+#    #+#             */
-/*   Updated: 2025/11/25 08:25:42 by flvejux          ###   ########.fr       */
+/*   Created: 2025/11/29 10:44:25 by flvejux           #+#    #+#             */
+/*   Updated: 2025/11/29 10:47:29 by flvejux          ###   ########.ch       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,7 @@
 
 int	main(int ac, char **av)
 {
-	t_stack	*a;
-	t_stack	*b;
-
-	a = 0;
-	b = 0;
+	char	**args;
+	t_stack	*stack_a;
+	t_stack	*stack_b;
 }

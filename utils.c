@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: flvejux <flvejux@student.42lausanne.ch>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 29/11/2025 10:36:26 by flvejux           #+#    #+#             */
-/*   Updated: 29/11/2025 10:36:26 by flvejux          ###   ########.ch       */
+/*   Created: 2025/11/30 08:58:36 by flvejux           #+#    #+#             */
+/*   Updated: 2025/11/30 08:59:39 by flvejux          ###   ########.ch       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,4 +25,36 @@ void	ft_free(char **tab)
 		i++;
 	}
 	free(tab);
+}
+
+int	is_sorted(t_stack **stack)
+{
+	t_stack	*tmp;
+
+	if (!stack)
+		return (TRUE);
+	tmp = *stack;
+	while (tmp->next)
+	{
+		if (tmp->value > tmp->next->value)
+			return (FALSE);
+		tmp = tmp->next;
+	}
+	return (TRUE);
+}
+
+int	is_reverse_sorted(t_stack **stack)
+{
+	t_stack	*tmp;
+
+	if (!stack)
+		return (TRUE);
+	tmp = *stack;
+	while (tmp->next)
+	{
+		if (tmp->value < tmp->next->value)
+			return (FALSE);
+		tmp = tmp->next;
+	}
+	return (TRUE);
 }

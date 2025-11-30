@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: flvejux <flvejux@student.42lausanne.ch>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/11/29 09:38:44 by flvejux           #+#    #+#             */
-/*   Updated: 2025/11/29 09:38:44 by flvejux          ###   ########.ch       */
+/*   Created: 2025/11/30 09:33:44 by flvejux           #+#    #+#             */
+/*   Updated: 2025/11/30 09:33:44 by flvejux          ###   ########.ch       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,11 +49,14 @@ void	swap(t_stack **stack);
 void	sa(t_stack **a);
 void	sa(t_stack **b);
 void	ss(t_stack **a, t_stack **b);
+void	sort_three(t_stack **stack);
 
 // int 
 int		check_entry(int ac, char **av);
 int		is_valid(char *av);
 int		chk_num(char *str);
 int		chk_double(int *nbr, int size);
+int		is_sorted(t_stack **stack);
+int		is_reverse_sorted(t_stack **stack);
 
 #endif
