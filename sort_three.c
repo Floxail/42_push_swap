@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   manual_sort.c                                      :+:      :+:    :+:   */
+/*   sort_three.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: flvejux <flvejux@student.42lausanne.ch>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/11/30 10:37:17 by flvejux           #+#    #+#             */
-/*   Updated: 2025/11/30 10:56:34 by flvejux          ###   ########.ch       */
+/*   Created: 29/11/2025 10:29:48 by flvejux           #+#    #+#             */
+/*   Updated: 09/12/2025 08:39:46 by flvejux          ###   ########.ch       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,13 +41,4 @@ void	sort_three(t_stack **stack)
 
 }
 
-void	sort_five(t_stack **stack)
-{
-	int	size;
-	
-	size = ft_lstsize(stack);
-	while (size--)
-	{
-		if ((*stack->value))
-	}
-}
+

@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: flvejux <flvejux@student.42lausanne.ch>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/11/30 09:33:44 by flvejux           #+#    #+#             */
-/*   Updated: 2025/11/30 09:33:44 by flvejux          ###   ########.ch       */
+/*   Created: 2025/12/09 08:27:19 by flvejux           #+#    #+#             */
+/*   Updated: 2025/12/09 08:27:36 by flvejux          ###   ########.ch       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,11 @@ typedef struct s_stack
 	int				value;
 	struct s_stack	*next;
 	struct s_stack	*prev;
+	t_stack			**a;
+	t_stack			**b
 }	t_stack;
+
+
 
 // struct
 t_stack	*create_node(int nbr);
