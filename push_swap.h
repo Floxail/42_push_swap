@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: flvejux <flvejux@student.42lausanne.ch>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/12/09 08:27:19 by flvejux           #+#    #+#             */
-/*   Updated: 2025/12/09 08:27:36 by flvejux          ###   ########.ch       */
+/*   Created: 2025/12/09 10:28:08 by flvejux           #+#    #+#             */
+/*   Updated: 2025/12/09 10:28:42 by flvejux          ###   ########.ch       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,8 +22,8 @@ typedef struct s_stack
 	int				value;
 	struct s_stack	*next;
 	struct s_stack	*prev;
-	t_stack			**a;
-	t_stack			**b
+	struct t_stack			**a;
+	struct t_stack			**b;
 }	t_stack;
 
 
@@ -53,7 +53,9 @@ void	swap(t_stack **stack);
 void	sa(t_stack **a);
 void	sa(t_stack **b);
 void	ss(t_stack **a, t_stack **b);
+void	to_the_top(t_stack **a, int pos, int size);
 void	sort_three(t_stack **stack);
+void	sort_five(t_stack **a, t_stack **b, int size);
 
 // int 
 int		check_entry(int ac, char **av);
@@ -62,5 +64,6 @@ int		chk_num(char *str);
 int		chk_double(int *nbr, int size);
 int		is_sorted(t_stack **stack);
 int		is_reverse_sorted(t_stack **stack);
+int		find_smallest(t_stack *stack);
 
 #endif

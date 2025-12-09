@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: flvejux <flvejux@student.42lausanne.ch>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 09/12/2025 08:40:16 by flvejux           #+#    #+#             */
-/*   Updated: 09/12/2025 08:40:16 by flvejux          ###   ########.ch       */
+/*   Created: 2025/12/09 10:46:29 by flvejux           #+#    #+#             */
+/*   Updated: 2025/12/09 10:46:46 by flvejux          ###   ########.ch       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,13 +27,13 @@ int	find_smallest(t_stack *stack)
 	{
 		if (tmp->value < mini)
 		{
-			mini = stack->value;
+			mini = tmp->value;
 			pos = i;
 		}
 		tmp = tmp->next;
 		i++;
 	}
-	return (pos)
+	return (pos);
 }
 void	to_the_top(t_stack **a, int pos, int size)
 {
@@ -52,6 +52,12 @@ void	sort_five(t_stack **a, t_stack **b, int size)
 	pos = find_smallest(*a);
 	to_the_top(a, pos, size);
 	pb(b, a);
+	size--;
+	pos = find_smallest(*a);
+	to_the_top(a, pos, size);
+	pb(b, a);
+	size--;
 	sort_three(a);
+	pa(a, b);
 	pa(a, b);
 }

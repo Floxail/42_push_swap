@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: flvejux <flvejux@student.42lausanne.ch>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/11/29 09:38:35 by flvejux           #+#    #+#             */
-/*   Updated: 2025/11/29 09:40:10 by flvejux          ###   ########.ch       */
+/*   Created: 2025/12/09 10:46:05 by flvejux           #+#    #+#             */
+/*   Updated: 2025/12/09 10:46:15 by flvejux          ###   ########.ch       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,6 +37,6 @@ void	pa(t_stack **a, t_stack **b)
 
 void	pb(t_stack **b, t_stack **a)
 {
-	push(b, a);
+	push(a, b);
 	ft_putendl_fd("pb", 1);
 }
