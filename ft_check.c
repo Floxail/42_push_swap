@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: flvejux <flvejux@student.42lausanne.ch>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/11/30 09:06:11 by flvejux           #+#    #+#             */
-/*   Updated: 2025/11/30 09:06:11 by flvejux          ###   ########.ch       */
+/*   Created: 2025/12/10 08:43:28 by flvejux           #+#    #+#             */
+/*   Updated: 2025/12/10 08:43:28 by flvejux          ###   ########.ch       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,10 +33,10 @@ int	is_valid(char *av)
 	while (tmp[i])
 	{
 		if (!chk_num(tmp[i]))
-			return (ft_free(tmp), FALSE);
+			return (ft_free_tab(tmp), FALSE);
 		i++;
 	}
-	ft_free(tmp);
+	ft_free_tab(tmp);
 	return (TRUE);
 }
 

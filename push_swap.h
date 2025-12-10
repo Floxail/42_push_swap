@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: flvejux <flvejux@student.42lausanne.ch>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/12/09 10:28:08 by flvejux           #+#    #+#             */
-/*   Updated: 2025/12/09 10:28:42 by flvejux          ###   ########.ch       */
+/*   Created: 2025/12/10 09:05:50 by flvejux           #+#    #+#             */
+/*   Updated: 2025/12/10 09:05:50 by flvejux          ###   ########.ch       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,11 +22,7 @@ typedef struct s_stack
 	int				value;
 	struct s_stack	*next;
 	struct s_stack	*prev;
-	struct t_stack			**a;
-	struct t_stack			**b;
 }	t_stack;
-
-
 
 // struct
 t_stack	*create_node(int nbr);
@@ -37,7 +33,7 @@ t_stack	*create_stack(int *tab, int size);
 // void
 void	free_stack(t_stack *stack);
 void	swap(t_stack **stack);
-void	ft_free(char **tab);
+void	ft_free_tab(char **tab);
 void	rotate(t_stack **stack);
 void	ra(t_stack **a);
 void	rb(t_stack **b);
@@ -62,8 +58,13 @@ int		check_entry(int ac, char **av);
 int		is_valid(char *av);
 int		chk_num(char *str);
 int		chk_double(int *nbr, int size);
-int		is_sorted(t_stack **stack);
+int		is_sorted(t_stack *stack);
 int		is_reverse_sorted(t_stack **stack);
 int		find_smallest(t_stack *stack);
+int		count_args(char **tab);
+int		*convert(char **tab, int count);
+
+// char
+char	**extract(int ac, char **av, int *do_free);
 
 #endif

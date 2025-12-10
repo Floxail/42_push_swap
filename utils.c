@@ -5,14 +5,14 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: flvejux <flvejux@student.42lausanne.ch>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/11/30 08:58:36 by flvejux           #+#    #+#             */
-/*   Updated: 2025/11/30 08:59:39 by flvejux          ###   ########.ch       */
+/*   Created: 2025/12/10 09:07:02 by flvejux           #+#    #+#             */
+/*   Updated: 2025/12/10 09:07:02 by flvejux          ###   ########.ch       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	ft_free(char **tab)
+void	ft_free_tab(char **tab)
 {
 	int	i;
 
@@ -27,13 +27,13 @@ void	ft_free(char **tab)
 	free(tab);
 }
 
-int	is_sorted(t_stack **stack)
+int	is_sorted(t_stack *stack)
 {
 	t_stack	*tmp;
 
 	if (!stack)
 		return (TRUE);
-	tmp = *stack;
+	tmp = stack;
 	while (tmp->next)
 	{
 		if (tmp->value > tmp->next->value)

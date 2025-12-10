@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: flvejux <flvejux@student.42lausanne.ch>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 29/11/2025 10:29:48 by flvejux           #+#    #+#             */
-/*   Updated: 09/12/2025 08:39:46 by flvejux          ###   ########.ch       */
+/*   Created: 2025/12/10 07:49:49 by flvejux           #+#    #+#             */
+/*   Updated: 2025/12/10 07:49:59 by flvejux          ###   ########.ch       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,6 @@ void	sort_three(t_stack **stack)
 	one = (*stack)->value;
 	two = (*stack)->next->value;
 	tre = (*stack)->next->next->value;
-
 	if (is_reverse_sorted(stack))
 	{
 		sa(stack);
@@ -38,7 +37,4 @@ void	sort_three(t_stack **stack)
 	}
 	else if (one < two && two > tre)
 		rra(stack);
-
 }
-
-

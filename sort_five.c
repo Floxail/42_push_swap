@@ -6,7 +6,7 @@
 /*   By: flvejux <flvejux@student.42lausanne.ch>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/09 10:46:29 by flvejux           #+#    #+#             */
-/*   Updated: 2025/12/09 10:46:46 by flvejux          ###   ########.ch       */
+/*   Updated: 2025/12/10 07:49:08 by flvejux          ###   ########.ch       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int	find_smallest(t_stack *stack)
 {
-	t_stack *tmp;
+	t_stack	*tmp;
 	int		mini;
 	int		pos;
 	int		i;
@@ -23,7 +23,7 @@ int	find_smallest(t_stack *stack)
 	mini = stack->value;
 	pos = 0;
 	i = 0;
-	while(tmp)
+	while (tmp)
 	{
 		if (tmp->value < mini)
 		{
@@ -35,13 +35,14 @@ int	find_smallest(t_stack *stack)
 	}
 	return (pos);
 }
+
 void	to_the_top(t_stack **a, int pos, int size)
 {
 	if (pos <= (size / 2))
 		while (pos-- > 0)
 			ra(a);
 	else
-		while (pos ++ < size)
+		while (pos++ < size)
 			rra(a);
 }
 
