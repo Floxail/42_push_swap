@@ -6,7 +6,7 @@
 /*   By: floxail <floxail@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/10 09:05:50 by flvejux           #+#    #+#             */
-/*   Updated: 2025/12/16 10:27:03 by floxail          ###   ########.fr       */
+/*   Updated: 2025/12/16 11:00:04 by floxail          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,11 +52,11 @@ void	ss(t_stack **a, t_stack **b);
 void	to_the_top(t_stack **a, int pos, int size);
 void	sort_three(t_stack **stack);
 void	sort_five(t_stack **a, t_stack **b, int size);
-void    sorting(int *tab, int count);
-void    push_chunk_to_b(t_stack **a, t_stack **b, int chunk_num, int chunk_size);
-void    push_all_to_a(t_stack **a, t_stack **b);
-void    sort_big(t_stack **a, t_stack **b, int size);
-
+void	sorting(int *tab, int count);
+void	push_chunk_to_b(t_stack **a, t_stack **b,
+			int chunk_num, int chunk_size);
+void	push_all_to_a(t_stack **a, t_stack **b);
+void	sort_big(t_stack **a, t_stack **b, int size);
 
 // int 
 int		check_entry(int ac, char **av);
@@ -68,23 +68,17 @@ int		is_reverse_sorted(t_stack **stack);
 int		find_smallest(t_stack *stack);
 int		count_args(char **tab);
 int		*convert(char **tab, int count);
-int     *copy_tab(int *tab, int count);
-int     findex(int value, int *sorted, int count);
-int     *indexing(int *tab, int count);
-int     get_chunk_size(int total);
-int     is_in_chunk(int index, int chunk_num, int chunk_size);
-int     find_chunk_elem(t_stack *stack, int chunk_num, int chunk_size);
-int     find_max_pos(t_stack *stack);
-int     get_stack_size(t_stack *stack);
+int		*copy_tab(int *tab, int count);
+int		findex(int value, int *sorted, int count);
+int		*indexing(int *tab, int count);
+int		get_chunk_size(int total);
+int		is_in_chunk(int index, int chunk_num, int chunk_size);
+int		find_chunk_elem(t_stack *stack, int chunk_num, int chunk_size);
+int		find_max_pos(t_stack *stack);
+int		get_stack_size(t_stack *stack);
 int		*parse_and_convert(int ac, char **av, int *count, int *do_free);
 
 // char
 char	**extract(int ac, char **av, int *do_free);
-
-//static
-static void	sort_stack(t_stack **a, t_stack **b, int size);
-static int	init_stacks(t_stack **a, t_stack **b, int *indexed, int count);
-static int	*get_indexed_numbers(int ac, char **av, int *count, int *do_free);
-static void	sort_and_clean(t_stack **a, t_stack **b, int size);
 
 #endif

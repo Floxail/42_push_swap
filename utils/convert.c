@@ -6,7 +6,7 @@
 /*   By: floxail <floxail@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/29 09:25:23 by flvejux           #+#    #+#             */
-/*   Updated: 2025/12/16 10:26:59 by floxail          ###   ########.fr       */
+/*   Updated: 2025/12/16 10:40:57 by floxail          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ char	**extract(int ac, char **av, int *do_free)
 			return (NULL);
 		*do_free = 1;
 	}
-	else if (ac > 2)
+	if (ac > 2)
 	{
 		tab = av + 1;
 		*do_free = 0;
@@ -65,6 +65,14 @@ int	*convert(char **tab, int count)
 		i++;
 	}
 	return (nbr);
+}
+
+static void	cleanup_all(char **args, int *numbers, int do_free)
+{
+	if (numbers)
+		free(numbers);
+	if (do_free && args)
+		ft_free_tab(args);
 }
 
 int	*parse_and_convert(int ac, char **av, int *count, int *do_free)

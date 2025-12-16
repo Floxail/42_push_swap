@@ -6,18 +6,18 @@
 /*   By: floxail <floxail@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2010/12/20 10:15:51 by flvejux           #+#    #+#             */
-/*   Updated: 2025/12/16 09:50:21 by floxail          ###   ########.fr       */
+/*   Updated: 2025/12/16 11:04:43 by floxail          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int get_chunk_size(int total)
+int	get_chunk_size(int total)
 {
-    if (total <= 100)
-        return (total / 5);
-    else
-        return (total / 11);
+	if (total <= 100)
+		return (total / 5);
+	else
+		return (total / 11);
 }
 
 int	*copy_tab(int *tab, int count)
@@ -41,6 +41,7 @@ void	sorting(int *tab, int count)
 {
 	int	i;
 	int	j;
+	int	tmp;
 
 	i = 0;
 	while (i < count - 1)
@@ -49,7 +50,11 @@ void	sorting(int *tab, int count)
 		while (j < count - 1 - i)
 		{
 			if (tab[j] > tab[j + 1])
-				ft_swap(&tab[j], &tab[j + 1]);
+			{
+				tmp = tab[j];
+				tab[j] = tab[j + 1];
+				tab[j + 1] = tmp;
+			}
 			j++;
 		}
 		i++;

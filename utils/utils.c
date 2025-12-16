@@ -6,7 +6,7 @@
 /*   By: floxail <floxail@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/10 09:07:02 by flvejux           #+#    #+#             */
-/*   Updated: 2025/12/16 09:54:35 by floxail          ###   ########.fr       */
+/*   Updated: 2025/12/16 11:01:37 by floxail          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,7 +59,7 @@ int	is_reverse_sorted(t_stack **stack)
 	return (TRUE);
 }
 
-static int	get_stack_size(t_stack *stack)
+int	get_stack_size(t_stack *stack)
 {
 	int		size;
 	t_stack	*tmp;
@@ -74,26 +74,26 @@ static int	get_stack_size(t_stack *stack)
 	return (size);
 }
 
-int find_max_pos(t_stack *stack)
+int	find_max_pos(t_stack *stack)
 {
-    int     max_val;
-    int     max_pos;
-    int     pos;
-    t_stack *tmp;
-    
-    max_val = stack->value;
-    max_pos = 0;
-    pos = 0;
-    tmp = stack;
-    while (tmp)
-    {
-        if (tmp->value > max_val)
-        {
-            max_val = tmp->value;
-            max_pos = pos;
-        }
-        tmp = tmp->next;
-        pos++;
-    }
-    return (max_pos);
+	int		max_val;
+	int		max_pos;
+	int		pos;
+	t_stack	*tmp;
+
+	max_val = stack->value;
+	max_pos = 0;
+	pos = 0;
+	tmp = stack;
+	while (tmp)
+	{
+		if (tmp->value > max_val)
+		{
+			max_val = tmp->value;
+			max_pos = pos;
+		}
+		tmp = tmp->next;
+		pos++;
+	}
+	return (max_pos);
 }

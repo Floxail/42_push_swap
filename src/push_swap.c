@@ -6,7 +6,7 @@
 /*   By: floxail <floxail@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/13 10:50:18 by flvejux           #+#    #+#             */
-/*   Updated: 2025/12/16 10:24:39 by floxail          ###   ########.fr       */
+/*   Updated: 2025/12/16 10:57:12 by floxail          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,13 +35,6 @@ static int	init_stacks(t_stack **a, t_stack **b, int *indexed, int count)
 	return (1);
 }
 
-static void	sort_and_clean(t_stack **a, t_stack **b, int size)
-{
-	sort_stack(a, b, size);
-	free_stack(*a);
-	free_stack(*b);
-}
-
 static void	sort_stack(t_stack **a, t_stack **b, int size)
 {
 	if (size == 2)
@@ -51,7 +44,14 @@ static void	sort_stack(t_stack **a, t_stack **b, int size)
 	else if (size <= 5)
 		sort_five(a, b, size);
 	else
-	 	sort_big(a, b, size);
+		sort_big(a, b, size);
+}
+
+static void	sort_and_clean(t_stack **a, t_stack **b, int size)
+{
+	sort_stack(a, b, size);
+	free_stack(*a);
+	free_stack(*b);
 }
 
 int	main(int ac, char **av)
@@ -77,4 +77,3 @@ int	main(int ac, char **av)
 	sort_and_clean(&stack_a, &stack_b, get_stack_size(stack_a));
 	return (0);
 }
-
