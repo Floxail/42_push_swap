@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   quick_sort.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: floxail <floxail@student.42.fr>            +#+  +:+       +#+        */
+/*   By: flox <flox@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/16 09:51:02 by floxail           #+#    #+#             */
-/*   Updated: 2025/12/16 11:35:49 by floxail          ###   ########.fr       */
+/*   Updated: 2025/12/16 17:51:36 by flox             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,10 +59,11 @@ void	push_chunk_to_b(t_stack **a, t_stack **b, int chunk_num, int chunk_size)
 	}
 }
 
-void	push_all_to_a(t_stack **a, t_stack **b)
-{
-	int	pos;
 
+void push_all_to_a(t_stack **a, t_stack **b)
+{
+	int pos;
+	
 	while (*b)
 	{
 		pos = find_max_pos(*b);
@@ -79,11 +80,19 @@ void	sort_big(t_stack **a, t_stack **b, int size)
 
 	chunk_size = get_chunk_size(size);
 	nb_chunks = size / chunk_size;
+	if (size % chunk_size != 0)
+		nb_chunks++;
 	i = 0;
 	while (i < nb_chunks)
 	{
 		push_chunk_to_b(a, b, i, chunk_size);
 		i++;
 	}
+	while (*a && get_stack_size(*a) > 3)
+		pb(a, b);
+	if (*a && get_stack_size(*a) == 3)
+		sort_three(a);
+	else if (*a && get_stack_size(*a) == 2)
+		sa(a);
 	push_all_to_a(a, b);
 }

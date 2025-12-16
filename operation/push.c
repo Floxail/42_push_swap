@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: floxail <floxail@student.42.fr>            +#+  +:+       +#+        */
+/*   By: flox <flox@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/09 10:46:05 by flvejux           #+#    #+#             */
-/*   Updated: 2025/12/16 11:34:17 by floxail          ###   ########.fr       */
+/*   Updated: 2025/12/16 17:37:30 by flox             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ void	push(t_stack **stack_give, t_stack **stack_receive)
 {
 	t_stack	*tmp;
 
-	if (!stack_receive || !stack_give || !*stack_give)
+	if (!stack_give || !*stack_give)
 		return ;
 	tmp = *stack_give;
 	*stack_give = (*stack_give)->next;

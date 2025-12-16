@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   sort_five.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: flvejux <flvejux@student.42lausanne.ch>    +#+  +:+       +#+        */
+/*   By: flox <flox@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/09 10:46:29 by flvejux           #+#    #+#             */
-/*   Updated: 2025/12/10 07:49:08 by flvejux          ###   ########.ch       */
+/*   Updated: 2025/12/16 17:31:34 by flox             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,12 +38,17 @@ int	find_smallest(t_stack *stack)
 
 void	to_the_top(t_stack **a, int pos, int size)
 {
+	int	rotation;
+	
 	if (pos <= (size / 2))
 		while (pos-- > 0)
 			ra(a);
 	else
-		while (pos++ < size)
+	{
+		rotation = size - pos;
+		while (rotation-- > 0)
 			rra(a);
+	}
 }
 
 void	sort_five(t_stack **a, t_stack **b, int size)
@@ -52,13 +57,13 @@ void	sort_five(t_stack **a, t_stack **b, int size)
 
 	pos = find_smallest(*a);
 	to_the_top(a, pos, size);
-	pb(b, a);
+	pb(a, b);
 	size--;
 	pos = find_smallest(*a);
 	to_the_top(a, pos, size);
-	pb(b, a);
+	pb(a, b);
 	size--;
 	sort_three(a);
-	pa(a, b);
-	pa(a, b);
+	pa(b, a);
+	pa(b, a);
 }

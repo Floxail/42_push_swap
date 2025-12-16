@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   quick_sort_utils.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: floxail <floxail@student.42.fr>            +#+  +:+       +#+        */
+/*   By: flox <flox@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2010/12/20 10:15:51 by flvejux           #+#    #+#             */
-/*   Updated: 2025/12/16 11:04:43 by floxail          ###   ########.fr       */
+/*   Updated: 2025/12/16 16:19:22 by flox             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,11 +83,11 @@ int	*indexing(int *tab, int count)
 
 	tmp = copy_tab(tab, count);
 	if (!tmp)
-		return (free (tmp), NULL);
+		return (NULL);
 	sorting(tmp, count);
 	index = malloc(sizeof(int) * count);
 	if (!index)
-		return (NULL);
+		return (free(tmp), NULL);
 	i = 0;
 	while (i < count)
 	{
