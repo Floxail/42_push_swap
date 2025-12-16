@@ -6,7 +6,7 @@
 /*   By: floxail <floxail@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/10 09:05:50 by flvejux           #+#    #+#             */
-/*   Updated: 2025/12/16 09:58:04 by floxail          ###   ########.fr       */
+/*   Updated: 2025/12/16 10:27:03 by floxail          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,9 +76,15 @@ int     is_in_chunk(int index, int chunk_num, int chunk_size);
 int     find_chunk_elem(t_stack *stack, int chunk_num, int chunk_size);
 int     find_max_pos(t_stack *stack);
 int     get_stack_size(t_stack *stack);
+int		*parse_and_convert(int ac, char **av, int *count, int *do_free);
 
 // char
 char	**extract(int ac, char **av, int *do_free);
 
+//static
+static void	sort_stack(t_stack **a, t_stack **b, int size);
+static int	init_stacks(t_stack **a, t_stack **b, int *indexed, int count);
+static int	*get_indexed_numbers(int ac, char **av, int *count, int *do_free);
+static void	sort_and_clean(t_stack **a, t_stack **b, int size);
 
 #endif

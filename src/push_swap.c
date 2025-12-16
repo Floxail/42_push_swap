@@ -6,7 +6,7 @@
 /*   By: floxail <floxail@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/13 10:50:18 by flvejux           #+#    #+#             */
-/*   Updated: 2025/12/16 09:59:10 by floxail          ###   ########.fr       */
+/*   Updated: 2025/12/16 10:24:39 by floxail          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ static int	*get_indexed_numbers(int ac, char **av, int *count, int *do_free)
 	numbers = parse_and_convert(ac, av, count, do_free);
 	if (!numbers)
 		return (NULL);
-	indexed = indexing(numbers, count);
+	indexed = indexing(numbers, *count);
 	free(numbers);
 	return (indexed);
 }
