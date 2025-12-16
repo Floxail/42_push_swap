@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: flvejux <flvejux@student.42lausanne.ch>    +#+  +:+       +#+        */
+/*   By: floxail <floxail@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/10 09:05:50 by flvejux           #+#    #+#             */
-/*   Updated: 2025/12/10 09:05:50 by flvejux          ###   ########.ch       */
+/*   Updated: 2025/12/16 09:17:57 by floxail          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,6 +52,7 @@ void	ss(t_stack **a, t_stack **b);
 void	to_the_top(t_stack **a, int pos, int size);
 void	sort_three(t_stack **stack);
 void	sort_five(t_stack **a, t_stack **b, int size);
+void    sorting(int *tab, int count);
 
 // int 
 int		check_entry(int ac, char **av);
@@ -63,8 +64,12 @@ int		is_reverse_sorted(t_stack **stack);
 int		find_smallest(t_stack *stack);
 int		count_args(char **tab);
 int		*convert(char **tab, int count);
+int     *copy_tab(int *tab, int count);
+int     findex(int value, int *sorted, int count);
+int     *indexing(int *tab, int count);
 
 // char
 char	**extract(int ac, char **av, int *do_free);
+
 
 #endif

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   quick_sort.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: flox <flox@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: floxail <floxail@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2010/12/20 10:15:51 by flvejux           #+#    #+#             */
-/*   Updated: 2025/12/13 10:46:03 by flox             ###   ########.fr       */
+/*   Updated: 2025/12/16 09:14:28 by floxail          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,7 +69,7 @@ int	findex(int value, int *sorted, int count)
 	return (-1);
 }
 
-int	indexing(int *tab, int count)
+int	*indexing(int *tab, int count)
 {
 	int	i;
 	int	*index;
@@ -77,7 +77,7 @@ int	indexing(int *tab, int count)
 
 	tmp = copy_tab(tab, count);
 	if (!tmp)
-		return (free (tmp)qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqq, NULL);
+		return (free (tmp), NULL);
 	sorting(tmp, count);
 	index = malloc(sizeof(int) * count);
 	if (!index)

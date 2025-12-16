@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: flvejux <flvejux@student.42lausanne.ch>    +#+  +:+       +#+        */
+/*   By: floxail <floxail@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/13 10:50:18 by flvejux           #+#    #+#             */
-/*   Updated: 2025/12/13 10:51:14 by flvejux          ###   ########.ch       */
+/*   Updated: 2025/12/16 09:13:34 by floxail          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,41 +63,5 @@ int	main(int ac, char **av)
 		return (0);
 	}
 	sort_and_clean(&stack_a, &stack_b, get_stack_size(stack_a));
-	return (0);
-}
-
-int	main(int ac, char **av)
-{
-	t_stack	*stack_a;
-	t_stack	*stack_b;
-	int		*indexer;
-	int		*numbers;
-	int		count;
-	int		do_free;
-
-	if (!check_entry(ac, av))
-		return (0);
-	numbers = parse_and_convert(ac, av, &count, &do_free);
-	if (!numbers)
-		return (write(2, "Error\n", 6), 1);
-	indexed = indexing(numbers, count);
-	if (!indexed)
-	{
-		free(numbers);
-		return (write(2, "Error\n", 6), 1);
-	}
-	stack_a = create_stack(numbers, count);
-	stack_b = NULL;
-	free(numbers);
-	if (!stack_a)
-		return (write(2, "Error\n", 6), 1);
-	if (is_sorted(stack_a))
-	{
-		free_stack(stack_a);
-		return (0);
-	}
-	sort_stack(&stack_a, &stack_b, get_stack_size(stack_a));
-	free_stack(stack_a);
-	free_stack(stack_b);
 	return (0);
 }
