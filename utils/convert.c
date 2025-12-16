@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   convert.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: flvejux <flvejux@student.42lausanne.ch>    +#+  +:+       +#+        */
+/*   By: floxail <floxail@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/29 09:25:23 by flvejux           #+#    #+#             */
-/*   Updated: 2025/11/29 09:26:05 by flvejux          ###   ########.ch       */
+/*   Updated: 2025/12/16 09:24:21 by floxail          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,4 +65,38 @@ int	*convert(char **tab, int count)
 		i++;
 	}
 	return (nbr);
+}
+
+static int	*parse_and_convert(int ac, char **av, int *count, int *do_free)
+{
+	char	**args;
+	int		*numbers;
+
+	args = extract(ac, av, do_free);
+	if (!args)
+		return (NULL);
+	*count = count_args(args);
+	numbers = convert(args, *count);
+	if (!numbers)
+	{
+		if (*do_free)
+			ft_free_tab(args);
+		return (NULL);
+	}
+	if (!chk_double(numbers, *count))
+	{
+		cleanup_all(args, numbers, *do_free);
+		return (NULL);
+	}
+	if (*do_free)
+		ft_free_tab(args);
+	return (numbers);
+}
+
+static void	cleanup_all(char **args, int *numbers, int do_free)
+{
+	if (numbers)
+		free(numbers);
+	if (do_free && args)
+		ft_free_tab(args);
 }

@@ -1,22 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   quick_sort.c                                       :+:      :+:    :+:   */
+/*   quick_sort_utils.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: floxail <floxail@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2010/12/20 10:15:51 by flvejux           #+#    #+#             */
-/*   Updated: 2025/12/16 09:14:28 by floxail          ###   ########.fr       */
+/*   Updated: 2025/12/16 09:50:21 by floxail          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	quick_sort(t_stack **stack)
+int get_chunk_size(int total)
 {
-	t_stack	**a;
-	t_stack	**b;
-
+    if (total <= 100)
+        return (total / 5);
+    else
+        return (total / 11);
 }
 
 int	*copy_tab(int *tab, int count)

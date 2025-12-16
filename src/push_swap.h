@@ -6,7 +6,7 @@
 /*   By: floxail <floxail@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/10 09:05:50 by flvejux           #+#    #+#             */
-/*   Updated: 2025/12/16 09:17:57 by floxail          ###   ########.fr       */
+/*   Updated: 2025/12/16 09:58:04 by floxail          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,6 +53,10 @@ void	to_the_top(t_stack **a, int pos, int size);
 void	sort_three(t_stack **stack);
 void	sort_five(t_stack **a, t_stack **b, int size);
 void    sorting(int *tab, int count);
+void    push_chunk_to_b(t_stack **a, t_stack **b, int chunk_num, int chunk_size);
+void    push_all_to_a(t_stack **a, t_stack **b);
+void    sort_big(t_stack **a, t_stack **b, int size);
+
 
 // int 
 int		check_entry(int ac, char **av);
@@ -67,6 +71,11 @@ int		*convert(char **tab, int count);
 int     *copy_tab(int *tab, int count);
 int     findex(int value, int *sorted, int count);
 int     *indexing(int *tab, int count);
+int     get_chunk_size(int total);
+int     is_in_chunk(int index, int chunk_num, int chunk_size);
+int     find_chunk_elem(t_stack *stack, int chunk_num, int chunk_size);
+int     find_max_pos(t_stack *stack);
+int     get_stack_size(t_stack *stack);
 
 // char
 char	**extract(int ac, char **av, int *do_free);
