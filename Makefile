@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: floxail <floxail@student.42.fr>            +#+  +:+       +#+         #
+#    By: flox <flox@student.42.fr>                  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/12/16 10:18:30 by floxail           #+#    #+#              #
-#    Updated: 2025/12/16 10:42:44 by floxail          ###   ########.fr        #
+#    Updated: 2025/12/18 13:25:55 by flox             ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,18 +15,18 @@ CC = cc
 CFLAGS = -Wall -Wextra -Werror
 
 SRCS = src/push_swap.c \
-	   utils/chained_lst.c \
-	   utils/convert.c \
-	   utils/ft_check.c \
-	   utils/utils.c \
-	   operation/push.c \
-	   operation/swap.c \
-	   operation/rotate.c \
-	   operation/reverse_rotate.c \
-	   sort/sort_three.c \
-	   sort/sort_five.c \
-	   sort/quick_sort.c \
-	   sort/quick_sort_utils.c
+       utils/chained_lst.c \
+       utils/convert.c \
+       utils/ft_check.c \
+       utils/utils.c \
+       operation/push.c \
+       operation/swap.c \
+       operation/rotate.c \
+       operation/reverse_rotate.c \
+       sort/sort_three.c \
+       sort/sort_five.c \
+       sort/turk_algo.c \
+       sort/turk_utils.c \
 
 OBJS = $(SRCS:.c=.o)
 

@@ -6,34 +6,11 @@
 /*   By: flox <flox@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/13 10:50:18 by flvejux           #+#    #+#             */
-/*   Updated: 2025/12/16 17:36:03 by flox             ###   ########.fr       */
+/*   Updated: 2025/12/18 13:25:20 by flox             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-
-static int	*get_indexed_numbers(int ac, char **av, int *count, int *do_free)
-{
-	int	*numbers;
-	int	*indexed;
-
-	numbers = parse_and_convert(ac, av, count, do_free);
-	if (!numbers)
-		return (NULL);
-	indexed = indexing(numbers, *count);
-	free(numbers);
-	return (indexed);
-}
-
-static int	init_stacks(t_stack **a, t_stack **b, int *indexed, int count)
-{
-	*a = create_stack(indexed, count);
-	*b = NULL;
-	free(indexed);
-	if (!(*a))
-		return (0);
-	return (1);
-}
 
 static void	sort_stack(t_stack **a, t_stack **b, int size)
 {
@@ -44,7 +21,7 @@ static void	sort_stack(t_stack **a, t_stack **b, int size)
 	else if (size <= 5)
 		sort_five(a, b, size);
 	else
-		sort_big(a, b, size);
+		sort_turk(a, b);
 }
 
 static void	sort_and_clean(t_stack **a, t_stack **b, int size)
@@ -58,16 +35,19 @@ int	main(int ac, char **av)
 {
 	t_stack	*stack_a;
 	t_stack	*stack_b;
-	int		*indexed;
+	int		*numbers;
 	int		count;
 	int		do_free;
 
 	if (!check_entry(ac, av))
 		return (0);
-	indexed = get_indexed_numbers(ac, av, &count, &do_free);
-	if (!indexed)
+	numbers = parse_and_convert(ac, av, &count, &do_free);
+	if (!numbers)
 		return (write(2, "Error\n", 6), 1);
-	if (!init_stacks(&stack_a, &stack_b, indexed, count))
+	stack_a = create_stack(numbers, count);
+	stack_b = NULL;
+	free(numbers);
+	if (!stack_a)
 		return (write(2, "Error\n", 6), 1);
 	if (is_sorted(stack_a))
 	{

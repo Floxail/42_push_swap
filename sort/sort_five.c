@@ -6,36 +6,27 @@
 /*   By: flox <flox@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/09 10:46:29 by flvejux           #+#    #+#             */
-/*   Updated: 2025/12/16 17:31:34 by flox             ###   ########.fr       */
+/*   Updated: 2025/12/18 13:26:57 by flox             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	find_smallest(t_stack *stack)
+t_stack	*find_smallest(t_stack *stack)
 {
 	t_stack	*tmp;
-	int		mini;
-	int		pos;
-	int		i;
+	t_stack	*smallest;
 
 	tmp = stack;
-	mini = stack->value;
-	pos = 0;
-	i = 0;
+	smallest = stack;
 	while (tmp)
 	{
-		if (tmp->value < mini)
-		{
-			mini = tmp->value;
-			pos = i;
-		}
+		if (tmp->value < smallest->value)
+			smallest = tmp;
 		tmp = tmp->next;
-		i++;
 	}
-	return (pos);
+	return (smallest);
 }
-
 void	to_the_top(t_stack **a, int pos, int size)
 {
 	int	rotation;
@@ -55,15 +46,15 @@ void	sort_five(t_stack **a, t_stack **b, int size)
 {
 	int	pos;
 
-	pos = find_smallest(*a);
+	pos = get_position(*a, find_smallest(*a)->value);
 	to_the_top(a, pos, size);
-	pb(a, b);
+	pb(b, a);
 	size--;
-	pos = find_smallest(*a);
+	pos = get_position(*a, find_smallest(*a)->value);
 	to_the_top(a, pos, size);
-	pb(a, b);
+	pb(b, a);
 	size--;
 	sort_three(a);
-	pa(b, a);
-	pa(b, a);
+	pa(a, b);
+	pa(a, b);
 }

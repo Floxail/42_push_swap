@@ -6,7 +6,7 @@
 /*   By: flox <flox@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/10 09:05:50 by flvejux           #+#    #+#             */
-/*   Updated: 2025/12/16 17:36:07 by flox             ###   ########.fr       */
+/*   Updated: 2025/12/18 13:24:01 by flox             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,16 +25,21 @@ typedef struct s_stack
 	struct s_stack	*prev;
 }	t_stack;
 
-// struct
+// STRUCT
 t_stack	*create_node(int nbr);
 t_stack	*add_front(t_stack *stack, t_stack *new);
 t_stack	*add_back(t_stack *stack, t_stack *new);
 t_stack	*create_stack(int *tab, int size);
-
-// void
 void	free_stack(t_stack *stack);
+
+// OPÉRATION
+void	push(t_stack **stack_give, t_stack **stack_receive);
+void	pa(t_stack **a, t_stack **b);
+void	pb(t_stack **b, t_stack **a);
 void	swap(t_stack **stack);
-void	ft_free_tab(char **tab);
+void	sa(t_stack **a);
+void	sb(t_stack **b);
+void	ss(t_stack **a, t_stack **b);
 void	rotate(t_stack **stack);
 void	ra(t_stack **a);
 void	rb(t_stack **b);
@@ -43,43 +48,35 @@ void	rrotate(t_stack **stack);
 void	rra(t_stack **a);
 void	rrb(t_stack **b);
 void	rrr(t_stack **a, t_stack **b);
-void	push(t_stack **stack_give, t_stack **stack_receive);
-void	pa(t_stack **a, t_stack **b);
-void	pb(t_stack **b, t_stack **a);
-void	swap(t_stack **stack);
-void	sa(t_stack **a);
-void	sa(t_stack **b);
-void	ss(t_stack **a, t_stack **b);
-void	to_the_top(t_stack **a, int pos, int size);
-void	sort_three(t_stack **stack);
-void	sort_five(t_stack **a, t_stack **b, int size);
-void	sorting(int *tab, int count);
-void	push_chunk_to_b(t_stack **a, t_stack **b,
-			int chunk_num, int chunk_size);
-void	push_all_to_a(t_stack **a, t_stack **b);
-void	sort_big(t_stack **a, t_stack **b, int size);
 
-// int 
+//PARSING
 int		check_entry(int ac, char **av);
-int		is_valid(char *av);
 int		chk_num(char *str);
 int		chk_double(int *nbr, int size);
-int		is_sorted(t_stack *stack);
-int		is_reverse_sorted(t_stack **stack);
-int		find_smallest(t_stack *stack);
+char	**extract(int ac, char **av, int *do_free);
 int		count_args(char **tab);
 int		*convert(char **tab, int count);
-int		*copy_tab(int *tab, int count);
-int		findex(int value, int *sorted, int count);
-int		*indexing(int *tab, int count);
-int		get_chunk_size(int total);
-int		is_in_chunk(int index, int chunk_num, int chunk_size);
-int		find_chunk_elem(t_stack *stack, int chunk_num, int chunk_size);
-int		find_max_pos(t_stack *stack);
-int		get_stack_size(t_stack *stack);
 int		*parse_and_convert(int ac, char **av, int *count, int *do_free);
 
-// char
-char	**extract(int ac, char **av, int *do_free);
+//SORTING
+void	sort_three(t_stack **stack);
+void	sort_five(t_stack **a, t_stack **b, int size);
+void	sort_turk(t_stack **a, t_stack **b);
+
+//UTILS
+int		get_position(t_stack *stack, int value);
+int		find_target_pos(t_stack *a, int value);
+int		calculate_rotations(int pos, int size);
+int		calculate_total_cost(t_stack *a, t_stack *b, int pos_b);
+int		find_cheapest_pos(t_stack *a, t_stack *b);
+void	do_rotation(t_stack **stack, int pos, int size, int is_a);
+void	execute_cheapest_move(t_stack **a, t_stack **b);
+void	rotate_to_min(t_stack **a);
+void	ft_free_tab(char **tab);
+int		is_sorted(t_stack *stack);
+int		is_reverse_sorted(t_stack **stack);
+int		get_stack_size(t_stack *stack);
+t_stack	*find_smallest(t_stack *stack);
+void	to_the_top(t_stack **a, int pos, int size);
 
 #endif
