@@ -6,7 +6,7 @@
 /*   By: flox <flox@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/19 09:00:00 by flvejux           #+#    #+#             */
-/*   Updated: 2025/12/18 13:16:33 by flox             ###   ########.fr       */
+/*   Updated: 2025/12/18 13:39:57 by flox             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ void	push_all_but_three(t_stack **a, t_stack **b)
 	size = get_stack_size(*a);
 	while (size > 3)
 	{
-		pb(a, b);
+		pb(b, a);
 		size--;
 	}
 }
@@ -91,7 +91,7 @@ void	execute_cheapest_move(t_stack **a, t_stack **b)
 	target_pos = find_target_pos(*a, tmp->value);
 	do_rotation(b, cheapest_pos, get_stack_size(*b), 0);
 	do_rotation(a, target_pos, get_stack_size(*a), 1);
-	pa(b, a);
+	pa(a, b);
 }
 
 void	rotate_to_min(t_stack **a)
