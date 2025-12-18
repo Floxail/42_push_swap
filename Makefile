@@ -6,7 +6,7 @@
 #    By: flox <flox@student.42.fr>                  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/12/16 10:18:30 by floxail           #+#    #+#              #
-#    Updated: 2025/12/18 13:25:55 by flox             ###   ########.fr        #
+#    Updated: 2025/12/18 13:54:28 by flox             ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -26,8 +26,8 @@ SRCS = src/push_swap.c \
        sort/sort_three.c \
        sort/sort_five.c \
        sort/turk_algo.c \
-       sort/turk_utils.c \
-
+       sort/turk_push.c \
+       sort/turk_utils.c
 OBJS = $(SRCS:.c=.o)
 
 LIBFT = utils/libft/libft.a

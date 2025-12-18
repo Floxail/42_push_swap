@@ -6,7 +6,7 @@
 /*   By: flox <flox@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/19 09:00:00 by flvejux           #+#    #+#             */
-/*   Updated: 2025/12/18 13:16:21 by flox             ###   ########.fr       */
+/*   Updated: 2025/12/18 13:51:08 by flox             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,18 +63,11 @@ int	calculate_rotations(int pos, int size)
 		return (size - pos);
 }
 
-int	calculate_total_cost(t_stack *a, t_stack *b, int pos_b)
+static t_stack	*get_element_at_pos(t_stack *b, int pos_b)
 {
-	int		size_a;
-	int		size_b;
-	int		target_a;
-	int		cost_a;
-	int		cost_b;
 	t_stack	*tmp;
 	int		i;
 
-	size_a = get_stack_size(a);
-	size_b = get_stack_size(b);
 	tmp = b;
 	i = 0;
 	while (i < pos_b)
@@ -82,8 +75,19 @@ int	calculate_total_cost(t_stack *a, t_stack *b, int pos_b)
 		tmp = tmp->next;
 		i++;
 	}
-	target_a = find_target_pos(a, tmp->value);
-	cost_a = calculate_rotations(target_a, size_a);
-	cost_b = calculate_rotations(pos_b, size_b);
+	return (tmp);
+}
+
+int	calculate_total_cost(t_stack *a, t_stack *b, int pos_b)
+{
+	int		target_a;
+	int		cost_a;
+	int		cost_b;
+	t_stack	*elem;
+
+	elem = get_element_at_pos(b, pos_b);
+	target_a = find_target_pos(a, elem->value);
+	cost_a = calculate_rotations(target_a, get_stack_size(a));
+	cost_b = calculate_rotations(pos_b, get_stack_size(b));
 	return (cost_a + cost_b);
 }

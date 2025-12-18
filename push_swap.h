@@ -6,7 +6,7 @@
 /*   By: flox <flox@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/10 09:05:50 by flvejux           #+#    #+#             */
-/*   Updated: 2025/12/18 13:24:01 by flox             ###   ########.fr       */
+/*   Updated: 2025/12/18 13:48:21 by flox             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 # define FALSE 0
 # include "./utils/libft/libft.h"
 # include <limits.h>
-#include <stdio.h>
+# include <stdio.h>
 
 typedef struct s_stack
 {

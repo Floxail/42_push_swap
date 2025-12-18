@@ -6,7 +6,7 @@
 /*   By: flox <flox@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/13 10:50:18 by flvejux           #+#    #+#             */
-/*   Updated: 2025/12/18 13:36:52 by flox             ###   ########.fr       */
+/*   Updated: 2025/12/18 13:46:07 by flox             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,17 +27,6 @@ static void	sort_stack(t_stack **a, t_stack **b, int size)
 static void	sort_and_clean(t_stack **a, t_stack **b, int size)
 {
 	sort_stack(a, b, size);
-
-	// 🔍 DEBUG : Afficher l'état final
-    printf("=== STACK A FINALE ===\n");
-    t_stack *tmp = *a;
-    while (tmp)
-    {
-        printf("%d ", tmp->value);
-        tmp = tmp->next;
-    }
-    printf("\n===================\n");
-	// DEBUG
 	free_stack(*a);
 	free_stack(*b);
 }

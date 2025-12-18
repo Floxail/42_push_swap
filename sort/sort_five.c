@@ -6,7 +6,7 @@
 /*   By: flox <flox@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/09 10:46:29 by flvejux           #+#    #+#             */
-/*   Updated: 2025/12/18 13:26:57 by flox             ###   ########.fr       */
+/*   Updated: 2025/12/18 13:51:26 by flox             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,10 +27,11 @@ t_stack	*find_smallest(t_stack *stack)
 	}
 	return (smallest);
 }
+
 void	to_the_top(t_stack **a, int pos, int size)
 {
 	int	rotation;
-	
+
 	if (pos <= (size / 2))
 		while (pos-- > 0)
 			ra(a);
