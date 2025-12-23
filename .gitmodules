@@ -1,3 +1,0 @@
-[submodule "utils/libft"]
-	path = utils/libft
-	url = https://github.com/Floxail/42_cursus_libft.git

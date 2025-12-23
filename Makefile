@@ -6,7 +6,7 @@
 #    By: flox <flox@student.42.fr>                  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/12/16 10:18:30 by floxail           #+#    #+#              #
-#    Updated: 2025/12/18 13:54:28 by flox             ###   ########.fr        #
+#    Updated: 2025/12/23 08:53:38 by flox             ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -54,7 +54,7 @@ clean:
 fclean: clean
 	@rm -f $(NAME)
 	@make -C utils/libft fclean
-	@echo "Fully cleaned"
+	@echo "Full cleaned"
 
 re: fclean all
 

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   convert.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: flox <flox@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: flvejux <flvejux@student.42lausanne.ch>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/11/29 09:25:23 by flvejux           #+#    #+#             */
-/*   Updated: 2025/12/16 16:29:15 by flox             ###   ########.fr       */
+/*   Created: 2025/12/23 08:41:44 by flvejux           #+#    #+#             */
+/*   Updated: 2025/12/23 08:42:27 by flvejux          ###   ########.ch       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ char	**extract(int ac, char **av, int *do_free)
 			return (NULL);
 		*do_free = 1;
 	}
-	else if (ac > 2)
+	if (ac > 2)
 	{
 		tab = av + 1;
 		*do_free = 0;
