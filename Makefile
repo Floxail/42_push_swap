@@ -6,7 +6,7 @@
 #    By: flox <flox@student.42.fr>                  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/12/16 10:18:30 by floxail           #+#    #+#              #
-#    Updated: 2025/12/23 08:53:38 by flox             ###   ########.fr        #
+#    Updated: 2025/12/27 08:42:20 by flox             ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -35,11 +35,11 @@ LIBFT = utils/libft/libft.a
 all: $(NAME)
 
 $(NAME): $(OBJS) $(LIBFT)
-	@$(CC) $(CFLAGS) $(OBJS) -Lutils/libft -lft -o $(NAME)
+	@$(CC) $(CFLAGS) $(OBJS) -L./libft -lft -o $(NAME)
 
 # Compilation de la libft
 $(LIBFT):
-	@make -C utils/libft
+	@make -C ./libft
 
 # Règle pour les objets (.c -> .o)
 %.o: %.c
@@ -48,12 +48,12 @@ $(LIBFT):
 	   
 clean:
 	@rm -f $(OBJS)
-	@make -C utils/libft clean
+	@make -C ./libft clean
 	@echo "Cleaned object files"
 
 fclean: clean
 	@rm -f $(NAME)
-	@make -C utils/libft fclean
+	@make -C ./libft fclean
 	@echo "Full cleaned"
 
 re: fclean all
