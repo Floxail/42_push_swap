@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: flox <flox@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: flvejux <flvejux@student.42lausanne.ch>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/12/10 09:05:50 by flvejux           #+#    #+#             */
-/*   Updated: 2025/12/18 13:48:21 by flox             ###   ########.fr       */
+/*   Created: 2025/12/27 08:40:23 by flvejux           #+#    #+#             */
+/*   Updated: 2025/12/27 08:40:23 by flvejux          ###   ########.ch       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 # define PUSH_SWAP_H
 # define TRUE 1
 # define FALSE 0
-# include "./utils/libft/libft.h"
+# include "./libft/libft.h"
 # include <limits.h>
 # include <stdio.h>
 
