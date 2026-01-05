@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: flvejux <flvejux@student.42lausanne.ch>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/12/23 08:41:44 by flvejux           #+#    #+#             */
-/*   Updated: 2025/12/23 08:42:27 by flvejux          ###   ########.ch       */
+/*   Created: 2026/01/05 06:58:57 by flvejux           #+#    #+#             */
+/*   Updated: 2026/01/05 06:59:08 by flvejux          ###   ########.ch       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,20 +75,6 @@ static void	cleanup_all(char **args, int *numbers, int do_free)
 		ft_free_tab(args);
 }
 
-static int	validate_args(char **args)
-{
-	int	i;
-
-	i = 0;
-	while (args[i])
-	{
-		if (!chk_num(args[i]))
-			return (FALSE);
-		i++;
-	}
-	return (TRUE);
-}
-
 int	*parse_and_convert(int ac, char **av, int *count, int *do_free)
 {
 	char	**args;
@@ -97,12 +83,6 @@ int	*parse_and_convert(int ac, char **av, int *count, int *do_free)
 	args = extract(ac, av, do_free);
 	if (!args)
 		return (NULL);
-	if (!validate_args(args))
-	{
-		if (*do_free)
-			ft_free_tab(args);
-		return (NULL);
-	}
 	*count = count_args(args);
 	numbers = convert(args, *count);
 	if (!numbers)
