@@ -51,11 +51,15 @@ void	sort_five(t_stack **a, t_stack **b, int size)
 	to_the_top(a, pos, size);
 	pb(b, a);
 	size--;
-	pos = get_position(*a, find_smallest(*a)->value);
-	to_the_top(a, pos, size);
-	pb(b, a);
-	size--;
+	if (size > 3)
+	{
+		pos = get_position(*a, find_smallest(*a)->value);
+		to_the_top(a, pos, size);
+		pb(b, a);
+		size--;
+	}
 	sort_three(a);
 	pa(a, b);
-	pa(a, b);
+	if (size == 3)
+		pa(a, b);
 }

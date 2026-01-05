@@ -75,6 +75,20 @@ static void	cleanup_all(char **args, int *numbers, int do_free)
 		ft_free_tab(args);
 }
 
+static int	validate_args(char **args)
+{
+	int	i;
+
+	i = 0;
+	while (args[i])
+	{
+		if (!chk_num(args[i]))
+			return (FALSE);
+		i++;
+	}
+	return (TRUE);
+}
+
 int	*parse_and_convert(int ac, char **av, int *count, int *do_free)
 {
 	char	**args;
@@ -83,6 +97,12 @@ int	*parse_and_convert(int ac, char **av, int *count, int *do_free)
 	args = extract(ac, av, do_free);
 	if (!args)
 		return (NULL);
+	if (!validate_args(args))
+	{
+		if (*do_free)
+			ft_free_tab(args);
+		return (NULL);
+	}
 	*count = count_args(args);
 	numbers = convert(args, *count);
 	if (!numbers)
