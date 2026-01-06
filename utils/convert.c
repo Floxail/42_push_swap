@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: flvejux <flvejux@student.42lausanne.ch>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/01/05 06:58:57 by flvejux           #+#    #+#             */
-/*   Updated: 2026/01/05 06:59:08 by flvejux          ###   ########.ch       */
+/*   Created: 2026/01/06 11:01:57 by flvejux           #+#    #+#             */
+/*   Updated: 2026/01/06 11:01:57 by flvejux          ###   ########.ch       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,6 +53,7 @@ int	*convert(char **tab, int count)
 	nbr = malloc(sizeof(int) * count);
 	if (!nbr)
 		return (NULL);
+	
 	while (count > i)
 	{
 		tmp = ft_atol(tab[i]);

@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: flvejux <flvejux@student.42lausanne.ch>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/12/27 08:40:23 by flvejux           #+#    #+#             */
-/*   Updated: 2025/12/27 08:40:23 by flvejux          ###   ########.ch       */
+/*   Created: 2026/01/06 11:51:01 by flvejux           #+#    #+#             */
+/*   Updated: 2026/01/06 11:51:01 by flvejux          ###   ########.ch       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,6 +51,7 @@ void	rrr(t_stack **a, t_stack **b);
 
 //PARSING
 int		check_entry(int ac, char **av);
+int	is_valid(int ac, char **av);
 int		chk_num(char *str);
 int		chk_double(int *nbr, int size);
 char	**extract(int ac, char **av, int *do_free);
