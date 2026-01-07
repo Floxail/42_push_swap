@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_check.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: flvejux <flvejux@student.42lausanne.ch>    +#+  +:+       +#+        */
+/*   By: flox <flox@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/06 11:50:01 by flvejux           #+#    #+#             */
-/*   Updated: 2026/01/06 11:50:01 by flvejux          ###   ########.ch       */
+/*   Updated: 2026/01/07 14:41:43 by flox             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,20 +21,42 @@ int	check_entry(int ac, char **av)
 	return (TRUE);
 }
 
+static int	check_split_args(char **split)
+{
+	int	i;
+
+	i = 0;
+	while (split[i])
+	{
+		if (!chk_num(split[i]))
+		{
+			ft_free_tab(split);
+			return (0);
+		}
+		i++;
+	}
+	ft_free_tab(split);
+	return (1);
+}
+
 int	is_valid(int ac, char **av)
 {
 	int		i;
+	char	**split;
 
-	i = 1;
-	while (i <= ac)
+	if (ac == 2)
 	{
-		while (av[i])
-		{
-			if (!chk_num(av[i]))
-				return (0);
-			i++;
-		}
-		return (1);
+		split = ft_split(av[1], ' ');
+		if (!split)
+			return (0);
+		return (check_split_args(split));
+	}
+	i = 1;
+	while (i < ac)
+	{
+		if (!chk_num(av[i]))
+			return (0);
+		i++;
 	}
 	return (1);
 }

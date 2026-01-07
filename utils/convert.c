@@ -53,11 +53,11 @@ int	*convert(char **tab, int count)
 	nbr = malloc(sizeof(int) * count);
 	if (!nbr)
 		return (NULL);
-	
+
 	while (count > i)
 	{
 		tmp = ft_atol(tab[i]);
-		if (tmp < INT_MIN || tmp > INT_MAX)
+		if (tmp == LONG_MAX || tmp < INT_MIN || tmp > INT_MAX)
 		{
 			free(nbr);
 			return (NULL);

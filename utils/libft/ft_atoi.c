@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: flvejux <flvejux@student.42.fr>            +#+  +:+       +#+        */
+/*   By: flox <flox@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/30 14:59:23 by flvejux           #+#    #+#             */
-/*   Updated: 2025/11/25 09:40:22 by flvejux          ###   ########.fr       */
+/*   Updated: 2025/12/09 14:19:11 by flox             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,8 +57,6 @@ long	ft_atol(const char *nptr)
 	while (ft_isdigit(nptr[i]))
 	{
 		nb = (nb * 10) + (nptr[i] - '0');
-		if ((sign == 1 && nb > INT_MAX) || (sign == -1 && nb > 2147483648L))
-			return (LONG_MAX);
 		i++;
 	}
 	return (sign * nb);
