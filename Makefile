@@ -6,7 +6,7 @@
 #    By: flox <flox@student.42.fr>                  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/12/16 10:18:30 by floxail           #+#    #+#              #
-#    Updated: 2025/12/27 08:42:20 by flox             ###   ########.fr        #
+#    Updated: 2026/01/08 08:36:20 by flox             ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -30,14 +30,14 @@ SRCS = src/push_swap.c \
        sort/turk_utils.c
 OBJS = $(SRCS:.c=.o)
 
-LIBFT = utils/libft/libft.a
+LIBFT = ./libft/libft.a
 
 all: $(NAME)
 
 $(NAME): $(OBJS) $(LIBFT)
 	@$(CC) $(CFLAGS) $(OBJS) -L./libft -lft -o $(NAME)
 
-# Compilation de la libft
+
 $(LIBFT):
 	@make -C ./libft
 

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_check.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: flox <flox@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: flvejux <flvejux@student.42lausanne.ch>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/01/06 11:50:01 by flvejux           #+#    #+#             */
-/*   Updated: 2026/01/07 14:41:43 by flox             ###   ########.fr       */
+/*   Created: 2026/01/08 08:30:23 by flvejux           #+#    #+#             */
+/*   Updated: 2026/01/08 08:30:23 by flvejux          ###   ########.ch       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ int	check_entry(int ac, char **av)
 	return (TRUE);
 }
 
-static int	check_split_args(char **split)
+int	check_split_args(char **split)
 {
 	int	i;
 
