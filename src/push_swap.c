@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: flvejux <flvejux@student.42lausanne.ch>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/01/06 11:51:12 by flvejux           #+#    #+#             */
-/*   Updated: 2026/01/06 12:38:27 by flvejux          ###   ########.ch       */
+/*   Created: 2026/01/08 09:15:21 by flvejux           #+#    #+#             */
+/*   Updated: 2026/01/08 09:15:21 by flvejux          ###   ########.ch       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,7 @@ int	main(int ac, char **av)
 	if (!is_valid(ac, av))
 		return (write(2, "Error\n", 6), 1);
 	numbers = parse_and_convert(ac, av, &count, &do_free);
-	if (!numbers )
+	if (!numbers)
 		return (write(2, "Error\n", 6), 1);
 	stack_a = create_stack(numbers, count);
 	stack_b = NULL;
