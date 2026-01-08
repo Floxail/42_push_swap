@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: flvejux <flvejux@student.42lausanne.ch>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/01/08 08:30:23 by flvejux           #+#    #+#             */
-/*   Updated: 2026/01/08 08:30:23 by flvejux          ###   ########.ch       */
+/*   Created: 2026/01/08 08:46:23 by flvejux           #+#    #+#             */
+/*   Updated: 2026/01/08 08:46:47 by flvejux          ###   ########.ch       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ int	check_entry(int ac, char **av)
 	return (TRUE);
 }
 
-int	check_split_args(char **split)
+int	split_args(char **split)
 {
 	int	i;
 
@@ -31,12 +31,12 @@ int	check_split_args(char **split)
 		if (!chk_num(split[i]))
 		{
 			ft_free_tab(split);
-			return (0);
+			return (FALSE);
 		}
 		i++;
 	}
 	ft_free_tab(split);
-	return (1);
+	return (TRUE);
 }
 
 int	is_valid(int ac, char **av)
@@ -49,16 +49,16 @@ int	is_valid(int ac, char **av)
 		split = ft_split(av[1], ' ');
 		if (!split)
 			return (0);
-		return (check_split_args(split));
+		return (split_args(split));
 	}
 	i = 1;
 	while (i < ac)
 	{
 		if (!chk_num(av[i]))
-			return (0);
+			return (FALSE);
 		i++;
 	}
-	return (1);
+	return (TRUE);
 }
 
 int	chk_num(char *str)
